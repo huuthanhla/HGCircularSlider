@@ -9,12 +9,12 @@
 import UIKit
 
 // MARK: - Internal Structures
-internal struct Interval {
+public struct Interval {
     var min: CGFloat = 0.0
     var max: CGFloat = 0.0
     var rounds: Int
 
-    init(min: CGFloat, max: CGFloat, rounds: Int = 1) {
+    public init(min: CGFloat, max: CGFloat, rounds: Int = 1) {
         assert(min <= max && rounds > 0, NSLocalizedString("Illegal interval", comment: ""))
         
         self.min = min
@@ -86,10 +86,10 @@ internal extension CGVector {
     }
 }
 
-internal extension CGRect {
+public extension CGRect {
  
     // get the center of rect (bounds or frame)
-    internal var center: CGPoint {
+    var center: CGPoint {
         get {
             let center = CGPoint(x: midX, y: midY)
             return center
@@ -124,7 +124,7 @@ internal class CircularSliderHelper {
      
      - returns: Returns the angle AÔB of an circle
      */
-    internal static func angle(betweenFirstPoint firstPoint: CGPoint, secondPoint: CGPoint, inCircleWithCenter center: CGPoint) -> CGFloat {
+    public static func angle(betweenFirstPoint firstPoint: CGPoint, secondPoint: CGPoint, inCircleWithCenter center: CGPoint) -> CGFloat {
         /*
          we get the angle by using two vectors
          http://www.vitutor.com/geometry/vec/angle_vectors.html
@@ -224,7 +224,7 @@ internal class CircularSliderHelper {
         return value
     }
 
-    internal static func delta(in interval: Interval, for angle: CGFloat, oldValue: CGFloat) -> CGFloat {
+    public static func delta(in interval: Interval, for angle: CGFloat, oldValue: CGFloat) -> CGFloat {
         let angleIntreval = Interval(min: circleMinValue , max: circleMaxValue)
 
         let oldAngle = scaleToAngle(value: oldValue, inInterval: interval)
