@@ -98,7 +98,7 @@ public extension CGRect {
 }
 
 // MARK: - Internal Helper
-internal class CircularSliderHelper {
+public class CircularSliderHelper {
     
     @nonobjc static let circleMinValue: CGFloat = 0
     @nonobjc static let circleMaxValue: CGFloat = CGFloat(2 * Double.pi)
